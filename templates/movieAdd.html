@@ -1,3 +1,5 @@
+<!-- correct movieAdd.html -->
+
 {% extends 'base.html'%}
 
 {% block title%}{% endblock %}
@@ -5,23 +7,18 @@
 {% block content%}
 
 <div class="container">
-  <h1>Add a New Book</h1>
+  <h1>Add a New Movie</h1>
   <div class="col">
-    <form method="POST" action="{{url_for('books_add')}}">
+    <form method="POST" action="{{url_for('movie_add')}}">
       <div class="form-row">
         <div class="form-group col-6">
-          <label for="bookTitle">Book Name</label>
-          <input type="text" class="form-control" name="bookTitle">
+          <label for="movieTitle">Movie Name</label>
+          <input type="text" class="form-control" name="movieTitle">
         </div>
 
         <div class="form-group col-6">
-          <label for="bookAuthor">Author</label>
-          <input type="text" class="form-control" name="bookAuthor">
-        </div>
-
-        <div class="form-group col-6">
-          <label for="bookGenre">Genre</label>
-          <select class="form-control" name="bookGenre">
+          <label for="movieGenre">Genre</label>
+          <select class="form-control" name="movieGenre">
             {% for genre in ['Action','Drama','Historical Fiction','Fantasy','Mystery','Romance','Science Fiction','Suspense','Thriller','Young Adult'] %}
             <option>{{genre}}</option>
             {% endfor %}

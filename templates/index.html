@@ -4,15 +4,57 @@
 
 {% block content%}
 
+<div class="card bg-dark text-white">
+  <img class="card-img" src="https://cdn.hipwallpaper.com/i/66/37/DvJfYm.jpg" alt="Card image" style="height:260px" >
+  <div class="card-img-overlay">
+    <h5 class="card-title">Featured Movie</h5>
+    <p class="card-text">This is the synopsis of the movie. The number one movie for three weeks in a row!!!</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div>
+
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="https://heightandweights.com/wp-content/uploads/2014/12/1337707629_leonardo-dicaprio-lg.jpg" alt="Card image cap" style='width:300;height:260px;'>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3">
 
     <div class="col mb-4">
       <div class="card">
-        <h1 class="text-center"><i data-feather="book-open"></i></h1>
+        <h1 class="text-center"><i data-feather="movie-open"></i></h1>
         <div class="card-body">
-          <h5 class="card-title">Books</h5>
-          <a href="{{url_for('books_view')}}" class="stretched-link"></a>
+          <h5 class="card-title">Movies</h5>
+          <a href="{{url_for('movie_view')}}" class="stretched-link"></a>
         </div>
       </div>
     </div>
@@ -23,16 +65,6 @@
         <div class="card-body">
           <h5 class="card-title">Users</h5>
           <a href="{{url_for('users_view')}}" class="stretched-link"></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col mb-4">
-      <div class="card">
-        <h1 class="text-center"><i data-feather="users"></i></h1>
-        <div class="card-body">
-          <h5 class="card-title">Reviews</h5>
-          <a href="{{url_for('reviews_view')}}" class="stretched-link"></a>
         </div>
       </div>
     </div>

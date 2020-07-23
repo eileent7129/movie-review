@@ -66,59 +66,52 @@ def users_add():
         mongo.db.users.insert(user)
         return redirect(url_for('users_view'))
 
-@app.route('/books')
-def books_view():
+@app.route('/movie')
+def movie_view():
     data = {
-    'books':mongo.db.books.find({}),
+    'movie':mongo.db.movie.find({}),
     }
-    return render_template('booksView.html', data=data)
+    return render_template('movieView.html', data=data)
 
-@app.route('/books/<title>')
-def books_detail(title):
+@app.route('/movie/<title>')
+def movie_detail(title):
     data = {
-    'book':mongo.db.books.find_one({'title':title}),
+    'movie':mongo.db.movie.find_one({'title':title}),
     'reviews':mongo.db.reviews.find({'title':title}),
     }
-    return render_template('booksDetail.html', data=data)
+    return render_template('movieDetail.html', data=data)
 
-@app.route('/books/add', methods=['GET','POST'])
-def books_add():
+@app.route('/movie/add', methods=['GET','POST'])
+def movie_add():
     if request.method == 'GET':
         data = {
         }
-        return render_template('booksAdd.html', data=data)
+        return render_template('movieAdd.html', data=data)
     else:
         form = request.form
-        book = {
-        'title':form['bookTitle'],
-        'author':form['bookAuthor'],
-        'genre':form['bookGenre'],
+        movie = {
+        'title':form['movieTitle'],
+        'genre':form['movieGenre'],
         }
         data = {
-        'book':book
+        'movie':movie
         }
-        mongo.db.books.insert(book)
-        return render_template('booksDetail.html', data=data)
+        mongo.db.movie.insert(movie)
+        return render_template('movieDetail.html', data=data)
 
-@app.route('/reviews')
-def reviews_view():
-    data = {
-    'reviews':mongo.db.reviews.find({}),
-    }
-    return render_template('reviewsView.html', data=data)
 
 @app.route('/review/add', methods=['GET','POST'])
 def reviews_add():
     if request.method == 'GET':
         data = {
-            'books':mongo.db.books.find({}),
+            'movie':mongo.db.movie.find({}),
             'users':mongo.db.users.find({}),
         }
         return render_template('reviewsAdd.html', data=data)
     else:
         form = request.form
         review = {
-        'title':form['bookTitle'],
+        'title':form['movieTitle'],
         'user':form['reviewUser'],
         'rating':int(form['reviewRating']),
         'review':form['reviewText'],
