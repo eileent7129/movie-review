@@ -7,7 +7,7 @@
 <ul class="list-group"> 
     {% for movie in data.movie %}
     <li class="list-group-item"> <strong>{{movie.title}}</strong> <br> Written by: {{movie.author}} 
-    <a href="{{url_for('movie_detail', title=movie.title)}}">Details</a> </li> 
+    <a href="{{url_for('movie_detail', title=movie.title)}}">Details</a></li> 
   {% endfor %}
   
 </ul>
