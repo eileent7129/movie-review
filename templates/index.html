@@ -3,7 +3,42 @@
 {% block title%}{% endblock %}
 
 {% block content%}
-
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1457131760772-7017c6180f05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1036&q=80" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+    <h1>Featured</h1>
+     </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1476846764689-14e2b6b2f133?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+    <h1>Reviewer's pick</h1>
+     </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+    <h1>Most Rated</h1>
+     </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- 
 <div class="card bg-dark text-white">
   <img class="card-img" src="https://i.pinimg.com/originals/77/a6/fb/77a6fb092282f9aea1db74d6ee2b931b.jpg" alt="Card image">
   <div class="card-img-overlay">
@@ -11,7 +46,7 @@
     <p class="card-text">This is the synopsis of the movie. The number one movie for three weeks in a row!!!</p>
     <p class="card-text">Last updated 3 mins ago</p>
   </div>
-</div>
+</div> -->
 
 <div class="card-deck">
   <div class="card">
@@ -19,6 +54,7 @@
     <div class="card-body"> 
       <h5 class="card-title">Harry Potter</h5>
       <p class="card-text">Harry Potter is a series of fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic and subjugate all wizards and Muggles.</p>
+       <a href="{{url_for('movie_detail', title='Harry Potter')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
@@ -29,6 +65,7 @@
     <div class="card-body">
       <h5 class="card-title">Batman</h5>
       <p class="card-text">Batman: Batman Begins is a 2005 superhero film directed by Christopher Nolan and written by Nolan and David S. Goyer. Based on the DC Comics character Batman, it stars Christian Bale, Michael Caine, Liam Neeson, Katie Holmes, Gary Oldman, Cillian Murphy, Tom Wilkinson, Rutger Hauer, Ken Watanabe, and Morgan Freeman. The film reboots the Batman film series, telling the origin story of Bruce Wayne from the death of his parents to his journey to become Batman and his fight to stop Ra's al Ghul and the Scarecrow from plunging Gotham City into chaos.</p>
+       <a href="{{url_for('movie_detail', title='Batman')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
@@ -39,6 +76,7 @@
     <div class="card-body">
       <h5 class="card-title">Spiderman</h5>
       <p class="card-text">Spiderman: Bitten by a radioactive spider in the subway, Brooklyn teenager Miles Morales suddenly develops mysterious powers that transform him into the one and only Spider-Man. When he meets Peter Parker, he soon realizes that there are many others who share his special, high-flying talents. Miles must now use his newfound skills to battle the evil Kingpin, a hulking madman who can open portals to other universes and pull different versions of Spider-Man into our world.</p>
+      <a href="{{url_for('movie_detail', title='Spiderman')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
@@ -52,8 +90,7 @@
     <div class="card-body">
       <h5 class="card-title">Avengers</h5>
       <p class="card-text">Avengers: When Thor's evil brother, Loki (Tom Hiddleston), gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury (Samuel L. Jackson), director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth. Joining Fury's "dream team" are Iron Man (Robert Downey Jr.), Captain America (Chris Evans), the Hulk (Mark Ruffalo), Thor (Chris Hemsworth), the Black Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner).</p>
-          <a href="{{url_for('movie_view')}}" class="stretched-link"></a>
-         
+       <a href="{{url_for('movie_detail', title='Avengers')}}">Details</a></li>          
     </div>
     <div class="card-footer">
       <small class="text-muted"></a></small>
@@ -64,46 +101,18 @@
     <div class="card-body">
       <h5 class="card-title">Us</h5>
       <p class="card-text">Us: Accompanied by her husband, son and daughter, Adelaide Wilson returns to the beachfront home where she grew up as a child. Haunted by a traumatic experience from the past, Adelaide grows increasingly concerned that something bad is going to happen. Her worst fears soon become a reality when four masked strangers descend upon the house, forcing the Wilsons into a fight for survival. When the masks come off, the family is horrified to learn that each attacker takes the appearance of one of them.</p>
+      <a href="{{url_for('movie_detail', title='Us')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="https://i.insider.com/58b6fafc67a1f41a008b4568?width=1100&format=jpeg&auto=webp
-<!-- (84 kB)
-https://i.insider.com/58b6fafc67a1f41a008b4568?width=1100&format=jpeg&auto=webp
-10:29
-Us: https://cdn.vox-cdn.com/thumbor/J-OhxfkGVpXFqS1PpDqjYlNdT9c=/0x0:4000x2034/1200x800/filters:focal(1680x697:2320x1337)/cdn.vox-cdn.com/uploads/chorus_image/image/63209648/US_1.0.jpg
-(120 kB)
-https://cdn.vox-cdn.com/thumbor/J-OhxfkGVpXFqS1PpDqjYlNdT9c=/0x0:4000x2034/1200x800/filters:focal(1680x697:2320x1337)/cdn.vox-cdn.com/uploads/chorus_image/image/63209648/US_1.0.jpg
-10:31
-https://www.newstatesman.com/sites/default/files/styles/cropped_article_image/public/blogs_2014/11/2014_44_interstellar_film_still.jpg?itok=k0YgBmLF
-(391 kB)
-https://www.newstatesman.com/sites/default/files/styles/cropped_article_image/public/blogs_2014/11/2014_44_interstellar_film_still.jpg?itok=k0YgBmLF
-10:32
-Wolf of Wall Street: https://shawglobalnews.files.wordpress.com/2020/01/05587740.jpg?quality=85&strip=all
-(107 kB)
-https://shawglobalnews.files.wordpress.com/2020/01/05587740.jpg?quality=85&strip=all
-10:32
-Avengers: https://cdn.images.express.co.uk/img/dynamic/36/285x190/1119643_1.jpg
-(15 kB)
-https://cdn.images.express.co.uk/img/dynamic/36/285x190/1119643_1.jpg -->
-
-Eileen Twimasi  10:38 AM
-Slideshow link: https://www.w3schools.com/howto/howto_js_slideshow.asp
-w3schools.comw3schools.com
-How To Create a Slideshow
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
-10:42
-Karate Kid: https://media.npr.org/assets/artslife/movies/2010/06/the-karate-kid/smith-642d3b92bd412e892719d26b5669fb2066069328-s800-c85.jpg
-(110 kB)
-https://media.npr.org/assets/artslife/movies/2010/06/the-karate-kid/smith-642d3b92bd412e892719d26b5669fb2066069328-s800-c85.jpg
-10:43
-Karate Kid summary: When his mother's career results in a move to China, 12-year-old Dre Parker (Jaden Smith) finds that he is a stranger in a strange land. Though he knows a little karate, his fighting skills are no match for Cheng, the school bully. Dre finds a friend in Mr. Han (Jackie Chan), a maintenance man who is also a martial-arts master. Mr. Han teaches Dre all about kung fu in the hope that Dre will be able to face down Cheng and perhaps win the heart of a pretty classmate named Mei Ying." alt="Card image cap">
+    <img class="card-img-top" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.wwnytv.com%2Fresizer%2FzUtwsBfCWccq8VN4wgyRIv4pdDg%3D%2F1200x600%2Farc-anglerfish-arc2-prod-raycom.s3.amazonaws.com%2Fpublic%2FP5OI7GFQORAAZBCHS3FHE2BSHU.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Get out</h5>
       <p class="card-text">Get Out: Now that Chris (Daniel Kaluuya) and his girlfriend, Rose (Allison Williams), have reached the meet-the-parents milestone of dating, she invites him for a weekend getaway upstate with Missy and Dean. At first, Chris reads the family's overly accommodating behavior as nervous attempts to deal with their daughter's interracial relationship, but as the weekend progresses, a series of increasingly disturbing discoveries lead him to a truth that he never could have imagined.</p>
+     <a href="{{url_for('movie_detail', title= 'Get Out')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
@@ -117,6 +126,7 @@ Karate Kid summary: When his mother's career results in a move to China, 12-year
     <div class="card-body"> 
       <h5 class="card-title">Interstellar</h5>
       <p class="card-text">Interstellar: In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole. But first, Brand must send former NASA pilot Cooper (Matthew McConaughey) and a team of researchers through the wormhole and across the galaxy to find out which of three planets could be mankind's new home.</p>
+      <a href="{{url_for('movie_detail', title='Interstellar')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
@@ -127,6 +137,7 @@ Karate Kid summary: When his mother's career results in a move to China, 12-year
     <div class="card-body">
       <h5 class="card-title">Karate Kid</h5>
       <p class="card-text">When his mother's career results in a move to China, 12-year-old Dre Parker (Jaden Smith) finds that he is a stranger in a strange land. Though he knows a little karate, his fighting skills are no match for Cheng, the school bully. Dre finds a friend in Mr. Han (Jackie Chan), a maintenance man who is also a martial-arts master. Mr. Han teaches Dre all about kung fu in the hope that Dre will be able to face down Cheng and perhaps win the heart of a pretty classmate named Mei Ying.</p>
+      <a href="{{url_for('movie_detail', title='Karate Kid')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
@@ -137,6 +148,7 @@ Karate Kid summary: When his mother's career results in a move to China, 12-year
     <div class="card-body">
       <h5 class="card-title">Wolf of Wall Street</h5>
       <p class="card-text">Wolf of Wall Street: In 1987, Jordan Belfort (Leonardo DiCaprio) takes an entry-level job at a Wall Street brokerage firm. By the early 1990s, while still in his 20s, Belfort founds his own firm, Stratton Oakmont. Together with his trusted lieutenant (Jonah Hill) and a merry band of brokers, Belfort makes a huge fortune by defrauding wealthy investors out of millions. However, while Belfort and his cronies partake in a hedonistic brew of sex, drugs and thrills, the SEC and the FBI close in on his empire of excess.</p>
+       <a href="{{url_for('movie_detail', title='Wolf of Wall Street')}}">Details</a></li> 
     </div>
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
