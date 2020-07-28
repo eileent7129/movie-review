@@ -11,8 +11,8 @@
     <title>{% block title%}{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="{{url_for('index')}}">We Rate Movies</a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #911919;">
+      <a class="navbar-brand" href="{{url_for('index')}}"><strong>We Rate Movies</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,26 +24,26 @@
           </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Movies
+              <strong>Movies</strong>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="nav-link" href="{{url_for('movie_view')}}">Movie List</a>
+              <a class="nav-link" href="{{url_for('movie_view')}}"><strong>Movie List</strong></a>
               <div class="dropdown-divider"></div>
-              <a class="nav-link" href="{{url_for('movie_add')}}">Add Movie</a>
+              <a class="nav-link" href="{{url_for('movie_add')}}"><strong>Add Movie</strong></a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Reviews
+              <strong>Reviews</strong>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <!-- <div class="dropdown-divider"></div> -->
-              <a class="nav-link" href="{{url_for('reviews_add')}}">Add Review</a>
+              <a class="nav-link" href="{{url_for('reviews_add')}}"><strong>Add Review</strong></a>
             </div>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Contact us
+              <strong>Contact us</strong>
             </a>
             <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="nav-link" href="{{url_for('users_view')}}">Profiles</a>
