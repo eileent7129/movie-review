@@ -55,17 +55,31 @@ def users_detail(USER):
 @app.route('/users/add', methods=['GET','POST'])
 def users_add():
     if request.method == 'GET':
-        data = {
-        }
-        return render_template('usersAdd.html', data=data)
-    else:
+        return ""
+        # data = {
+        # }
+        # return render_template('usersAdd.html', data=data)
+    elif request.method == 'POST':
         form = request.form
         user = {
-        'name':form['userName'],
+        'name':form['searchForm'],
         }
-        mongo.db.users.insert(user)
-        return redirect(url_for('users_view'))
+        print(user)
+        return render_template('index.html', user=user)
 
+# @app.route('/users/add', methods=['GET','POST'])
+# def users_add():
+#     if request.method == 'GET':
+#         data = {
+#         }
+#         return render_template('usersAdd.html', data=data)
+#     else:
+#         form = request.form
+#         user = {
+#         'name':form['userName'],
+#         }
+
+#         return redirect(url_for('users_view'))
 @app.route('/movie')
 def movie_view():
     data = {

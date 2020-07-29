@@ -8,11 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css', q=current_time) }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>{% block title%}{% endblock %}</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0F0C08;">
-      <a class="navbar-brand" href="{{url_for('index')}}" style="color:white"><strong>We Rate Movies</strong></a>
+      <a class="navbar-brand" href="{{url_for('index')}}" style="color:white"><strong>Movie Guru</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,8 +53,32 @@
             </div> -->
           </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0" action="" method="POST">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search movies..." aria-label="Search" name="searchForm"></input>
+      <button class="btn btn-outline-light my-2 my-sm-0 text-white" type="submit"><i class="fa fa-search"></i></button>
+        </form>
       </div>
     </nav>
+
+    <!-- <script>
+function searchFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("movie-list");
+    li = ul.getElementsByClassName("each_movie");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script> -->
+
 
     {% block content%}
 
