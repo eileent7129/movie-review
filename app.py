@@ -37,6 +37,12 @@ def index():
     }
     return render_template('index.html', data=data)
 
+@app.route('/about_us')
+def about_us():
+    data = {
+    }
+    return render_template('aboutUs.html', data=data)
+
 @app.route('/users')
 def users_view():
     data = {
@@ -135,5 +141,7 @@ def reviews_add():
         }
         mongo.db.reviews.insert(review)
         return render_template('reviewsDetail.html', data=data)
+
+
 
 #### Add new routes below this line ###
