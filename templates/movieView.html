@@ -4,12 +4,22 @@
 <div class="container">
   <h1>Movies</h1>
   
+  
 <ul class="list-group"> 
-    {% for movie in data.movie %}
-    <li class="list-group-item"> <strong>{{movie.title}}</strong> <br> Written by: {{movie.author}} 
-    <a href="{{url_for('movie_detail', title=movie.title)}}">Details</a></li> 
-  {% endfor %}
+     {% for movie in data.movie %}
+    <div class="card">
+    <div class="card-body"> 
+      <h5 class="card-title">{{movie.title}}</h5>
+      <p class="card-text">Synopsis</p>
+       <a href="{{url_for('movie_detail', title=movie.title)}}" class="stretched-link"></a></li> 
+    </div>
+  </div>
+         {% endfor %}
   
 </ul>
 {% endblock %}
+
+
+ <!-- <p class="card-text">When his mother's career results in a move to China, 12-year-old Dre Parker (Jaden Smith) finds that he is a stranger in a strange land. Though he knows a little karate, his fighting skills are no match for Cheng, the school bully. Dre finds a friend in Mr. Han (Jackie Chan), a maintenance man who is also a martial-arts master. Mr. Han teaches Dre all about kung fu in the hope that Dre will be able to face down Cheng and perhaps win the heart of a pretty classmate named Mei Ying.</p> -->
+
 
