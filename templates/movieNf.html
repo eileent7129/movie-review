@@ -3,10 +3,22 @@
 {% block content%}
 
 
+
 <!doctype html>
 
 <html lang="en">
 <head>
+
+<style>
+.container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+
+</style>
   <meta charset="utf-8">
 
   <title>The HTML5 Herald</title>
@@ -21,11 +33,10 @@
 </head>
 
 <body>
-    <div class="container">
+   <div class="container">
         <div><h1 style="text-align:center">Movie not in our records... add below!</h1></div>
         <div style="text-align:center;"><a href="{{url_for('movie_add')}}" class="btn btn-primary btn-lg active text-center" role="button" aria-pressed="true">Add Movie</a></div>
         </div>
-    </body>
 </html>
 
 
