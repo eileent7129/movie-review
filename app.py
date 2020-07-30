@@ -140,8 +140,23 @@ def reviews_add():
         'review':review
         }
         mongo.db.reviews.insert(review)
-        return render_template('reviewsDetail.html', data=data)
+        return redirect("https://0.0.0.0:5000" + url_for('movie_detail',title=form['movieTitle']))
 
 
 
 #### Add new routes below this line ###
+
+@app.route('/search', methods = ['GET','POST'])
+def search():
+    if request.method == 'POST':
+        form = request.form
+        query = {
+            'title':form['search']
+        }
+        document = mongo.db.movie.find_one(query)
+        if document:
+            return redirect("https://0.0.0.0:5000" + url_for('movie_detail',title=form['search']))
+        else:
+            return redirect("https://0.0.0.0:5000" + url_for('movie_add'))
+    else:
+        return redirect("https://0.0.0.0:5000" + url_for('index'))
