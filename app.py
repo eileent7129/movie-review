@@ -157,6 +157,12 @@ def search():
         if document:
             return redirect("https://0.0.0.0:5000" + url_for('movie_detail',title=form['search']))
         else:
-            return redirect("https://0.0.0.0:5000" + url_for('movie_add'))
+            return redirect("https://0.0.0.0:5000" + url_for('movie_nf'))
     else:
         return redirect("https://0.0.0.0:5000" + url_for('index'))
+
+@app.route('/movie_nf')
+def movie_nf():
+    data = {
+    }
+    return render_template('movieNf.html', data=data)
